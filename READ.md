@@ -27,7 +27,7 @@ Dynamic handoffs are managed between `CareerAgent`, `SkillAgent`, and `JobAgent`
 
 ```bash
 # Example:
-# git clone <your-repo-link>
+# git clone career_mentor_agent
 # cd career_mentor_agent
 # pip install -r requirements.txt
 # export OPENAI_API_KEY="your_openai_api_key"
