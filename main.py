@@ -1,17 +1,12 @@
-# main.py
-import os
-from openai import OpenAI # Ya jo bhi specific SDK classes hon
-# from openai.agents import Agent, Tool # Ye conceptual imports hain
-# from openai.agents.runner import AgentRunner # Ye bhi conceptual import hai
 
-# Apne agents aur tools ko import karein
+import os
+from openai import OpenAI 
 from agents.career_agent import CareerAgent
 from agents.skill_agent import SkillAgent
 from agents.job_agent import JobAgent
 from tools.career_roadmap_tool import get_career_roadmap
 from tools.skill_roadmap_generator import generate_skill_roadmap
 
-# OpenAI API Key load karein (ensure it's set as environment variable)
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
     raise ValueError("OPENAI_API_KEY environment variable not set.")
@@ -30,10 +25,6 @@ class CareerMentorRunner:
         self.tools = {
             "get_career_roadmap": get_career_roadmap,
             "generate_skill_roadmap": generate_skill_roadmap,
-            # Handoff ke liye special tools bhi define ho sakte hain.
-            # "handoff_to_skill_agent": self._handoff_to_skill_agent,
-            # "handoff_to_job_agent": self._handoff_to_job_agent,
-            # "handoff_to_career_agent": self._handoff_to_career_agent,
         }
 
         # Context ya state ko maintain karne ke liye.
